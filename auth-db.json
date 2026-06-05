@@ -18,11 +18,11 @@
     },
     {
       "id": 3,
-      "username": "tec2",
-      "password": "tec456",
-      "name": "María Técnica",
-      "roleId": 2,
-      "rol": "tecnico"
+      "username": "client1",
+      "password": "123",
+      "name": "María Perez",
+      "roleId": 3,
+      "rol": "cliente"
     },
     {
       "username": "jcarlos",
