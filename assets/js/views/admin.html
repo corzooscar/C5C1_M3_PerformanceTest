@@ -1,0 +1,112 @@
+<section>
+    <!-- Header -->
+    <div class="page-header">
+        <div>
+            <h2><i class="bi bi-shield-check me-2"></i>Panel Admin</h2>
+            <p>Gestión completa de tickets</p>
+        </div>
+        <button id="btnNuevoTicket" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> Crear Ticket
+        </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-grid" id="adminStats"></div>
+
+    <!-- Técnicos -->
+    <div class="tech-panel mb-3" id="techPanelWrapper">
+        <div class="section-title"><i class="bi bi-people-fill"></i> Técnicos Disponibles</div>
+        <div class="cards-grid" id="techCardsGrid">
+            <div class="loading-state"><div class="spinner-lg"></div></div>
+        </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filter-bar">
+        <input type="text" class="form-control" id="searchInput" placeholder="Nombre o descripción...">
+        <select class="form-select" id="filterEstado">
+            <option value="">Todos los estados</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="en proceso">En proceso</option>
+            <option value="asignado">Asignado</option>
+            <option value="solucionado">Solucionado</option>
+        </select>
+        <select class="form-select" id="filterTipo">
+            <option value="">Todos los tipos</option>
+            <option value="incidente">Incidente</option>
+            <option value="requerimiento">Requerimiento</option>
+            <option value="soporte">Soporte</option>
+        </select>
+        <button class="btn btn-secondary" id="btnLimpiarFiltros">
+            <i class="bi bi-x-circle"></i> Limpiar
+        </button>
+    </div>
+
+    <!-- Lista de tickets -->
+    <div class="section-title">
+        <i class="bi bi-ticket-detailed"></i> Todos los Tickets
+        <span class="count" id="ticketsCount"></span>
+    </div>
+    <div class="cards-grid" id="adminTicketsList">
+        <div class="loading-state"><div class="spinner-lg"></div><p>Cargando tickets...</p></div>
+    </div>
+</section>
+
+<!-- Modal: Crear / Editar Ticket -->
+<div class="modal-overlay" id="ticketModal">
+    <div class="modal-box" style="max-width:620px">
+        <div class="modal-header">
+            <h5 id="modalTitle"><i class="bi bi-ticket me-2"></i>Ticket</h5>
+            <button class="modal-close" id="modalClose">✕</button>
+        </div>
+        <div class="modal-body">
+            <div id="modalAlert" class="alert hidden"></div>
+            <input type="hidden" id="ticketId">
+            <div class="row col-2-3 mb-2">
+                <div class="form-group">
+                    <label class="form-label">Nombre del ticket *</label>
+                    <input type="text" class="form-control" id="ticketNombre" placeholder="Ej: Error en servidor">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Tipo *</label>
+                    <select class="form-select" id="ticketTipo">
+                        <option value="">Seleccionar...</option>
+                        <option value="incidente">Incidente</option>
+                        <option value="requerimiento">Requerimiento</option>
+                        <option value="soporte">Soporte</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Descripción *</label>
+                <textarea class="form-control" id="ticketDescripcion" rows="3" placeholder="Describe el problema..."></textarea>
+            </div>
+            <div class="row col-2">
+                <div class="form-group">
+                    <label class="form-label">Técnico asignado</label>
+                    <select class="form-select" id="ticketTecnico">
+                        <option value="">Sin asignar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Estado</label>
+                    <select class="form-select" id="ticketEstado">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="en proceso">En proceso</option>
+                        <option value="asignado">Asignado</option>
+                        <option value="solucionado">Solucionado</option>
+                    </select>
+                    <p class="small text-muted mt-1 hidden" id="estadoWarning">
+                        <i class="bi bi-exclamation-triangle"></i> "Asignado" requiere un técnico.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="modalCancelBtn">Cancelar</button>
+            <button class="btn btn-primary" id="btnGuardarTicket">
+                <i class="bi bi-check-lg"></i> Guardar
+            </button>
+        </div>
+    </div>
+</div>

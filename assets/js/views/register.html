@@ -1,0 +1,56 @@
+<div class="login-wrapper">
+    <div class="login-card">
+        <!-- Panel izquierdo decorativo -->
+        <div class="login-panel-left">
+            <div class="brand-icon"><i class="bi bi-person-plus-fill"></i></div>
+            <h2>Nuevo Cliente</h2>
+            <p>Crea tu cuenta y empieza<br>a gestionar tus reservaciones</p>
+        </div>
+        <!-- Panel derecho con el form -->
+        <div class="login-panel-right">
+            <h4>Crear cuenta</h4>
+            <p class="subtitle">Completa los datos para registrarte</p>
+
+            <div id="registerAlert" class="alert hidden"></div>
+
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <label class="form-label">Nombre completo</label>
+                    <div class="input-group">
+                        <span class="input-icon"><i class="bi bi-person-badge"></i></span>
+                        <input type="text" class="form-control" id="regName"
+                            placeholder="Tu nombre completo" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Usuario</label>
+                    <div class="input-group">
+                        <span class="input-icon"><i class="bi bi-at"></i></span>
+                        <input type="text" class="form-control" id="regUsername"
+                            placeholder="Nombre de usuario único" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-icon"><i class="bi bi-lock"></i></span>
+                        <input type="password" class="form-control" id="regPassword"
+                            placeholder="Mínimo 4 caracteres" required minlength="4">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="registerBtn" class="btn btn-success btn-block btn-lg">
+                        <span id="registerSpinner" class="spinner hidden"></span>
+                        Registrarme
+                    </button>
+                </div>
+            </form>
+
+            <hr class="login-divider">
+            <p class="login-footer">
+                ¿Ya tienes cuenta?
+                <a href="#" id="goToLogin">Inicia sesión</a>
+            </p>
+        </div>
+    </div>
+</div>

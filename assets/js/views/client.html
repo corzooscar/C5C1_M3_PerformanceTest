@@ -1,0 +1,69 @@
+<section>
+    <!-- Header -->
+    <div class="page-header">
+        <div>
+            <h2><i class="bi bi-person-check"></i> Mis Tickets</h2>
+            <p>Historial de tus solicitudes de soporte</p>
+        </div>
+        <button id="btnNuevoTicket" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Nueva Solicitud
+        </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-grid" id="clientStats"></div>
+
+    <!-- Lista -->
+    <div class="section-title">
+        <i class="bi bi-ticket-detailed"></i> Todos mis Tickets
+        <span class="count" id="ticketsCount"></span>
+    </div>
+    <div class="cards-grid" id="clientTicketsList">
+        <div class="loading-state"><div class="spinner-lg"></div><p>Cargando tus tickets...</p></div>
+    </div>
+</section>
+
+<!-- Modal: Crear/Editar Ticket Cliente -->
+<div class="modal-overlay" id="clientTicketModal">
+    <div class="modal-box" style="max-width:560px">
+        <div class="modal-header" style="background:var(--user-color)">
+            <h5 id="clientModalTitle"><i class="bi bi-ticket me-2"></i>Nueva Solicitud</h5>
+            <button class="modal-close" id="clientModalClose">✕</button>
+        </div>
+        <div class="modal-body">
+            <div id="clientModalAlert" class="alert hidden"></div>
+            <input type="hidden" id="clientTicketId">
+            <div class="row col-2-3">
+                <div class="form-group">
+                    <label class="form-label">Nombre del ticket *</label>
+                    <input type="text" class="form-control" id="clientTicketNombre"
+                        placeholder="Ej: Pantalla no enciende">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Tipo *</label>
+                    <select class="form-select" id="clientTicketTipo">
+                        <option value="">Seleccionar...</option>
+                        <option value="incidente">Incidente</option>
+                        <option value="requerimiento">Requerimiento</option>
+                        <option value="soporte">Soporte</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Descripción del problema *</label>
+                <textarea class="form-control" id="clientTicketDescripcion" rows="4"
+                    placeholder="Describe con detalle el problema o lo que necesitas..."></textarea>
+            </div>
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle"></i>
+                Un administrador revisará tu solicitud y asignará un técnico disponible.
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="clientModalCancelBtn">Cancelar</button>
+            <button class="btn btn-success" id="btnGuardarClientTicket">
+                <i class="bi bi-send"></i> Enviar Solicitud
+            </button>
+        </div>
+    </div>
+</div>
