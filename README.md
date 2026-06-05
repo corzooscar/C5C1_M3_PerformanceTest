@@ -51,7 +51,7 @@ npm run data-server
 **Terminal 3 — Vite Dev Server:**
 ```bash
 npm run dev
-# App available at http://localhost:5173
+# App available at http://localhost:8080
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
