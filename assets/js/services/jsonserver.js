@@ -49,7 +49,7 @@ export async function registerClient(username, password, name) {
  * @returns {Promise<Array>}
  */
 export async function getTechnicians() {
-    const res = await authClient.get('/users', { params: { rol: 'tecnico' } });
+    const res = await authClient.get('/users', { params: { rol: 'cliente' } });
     return res.data;
 }
 

@@ -89,7 +89,7 @@ function renderTechCards() {
     }
 
     grid.innerHTML = technicians.map(tech => {
-        const assigned = allTickets.filter(t => t.tecnicoId === tech.id).length;
+        const assigned = allTickets.filter(t => t.clienteNombre === tech.id).length;
         const initials = tech.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
         return `
             <div class="card card-body" style="text-align:center;padding:14px 10px">
@@ -99,7 +99,7 @@ function renderTechCards() {
                     ${initials}
                 </div>
                 <div class="fw-bold small">${tech.name}</div>
-                <div class="small text-muted">${assigned} ticket${assigned !== 1 ? 's' : ''}</div>
+                <div class="small text-muted">${assigned} Reserva${assigned !== 1 ? 's' : ''}</div>
             </div>`;
     }).join('');
 }
@@ -116,7 +116,7 @@ function renderTickets(tickets) {
         container.innerHTML = `
             <div class="empty-state">
                 <i class="bi bi-inbox"></i>
-                <p>No hay tickets para mostrar.</p>
+                <p>No hay Reservas para mostrar.</p>
             </div>`;
         return;
     }

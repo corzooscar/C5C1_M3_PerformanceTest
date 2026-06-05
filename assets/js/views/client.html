@@ -2,8 +2,8 @@
     <!-- Header -->
     <div class="page-header">
         <div>
-            <h2><i class="bi bi-person-check"></i> Mis Tickets</h2>
-            <p>Historial de tus solicitudes de soporte</p>
+            <h2><i class="bi bi-person-check"></i> Mis Reservas</h2>
+            <p>Historial de tus solicitudes</p>
         </div>
         <button id="btnNuevoTicket" class="btn btn-success">
             <i class="bi bi-plus-circle"></i> Nueva Solicitud
@@ -15,11 +15,11 @@
 
     <!-- Lista -->
     <div class="section-title">
-        <i class="bi bi-ticket-detailed"></i> Todos mis Tickets
+        <i class="bi bi-ticket-detailed"></i> Todas mis reservas
         <span class="count" id="ticketsCount"></span>
     </div>
     <div class="cards-grid" id="clientTicketsList">
-        <div class="loading-state"><div class="spinner-lg"></div><p>Cargando tus tickets...</p></div>
+        <div class="loading-state"><div class="spinner-lg"></div><p>Cargando tus reservas...</p></div>
     </div>
 </section>
 
@@ -35,7 +35,7 @@
             <input type="hidden" id="clientTicketId">
             <div class="row col-2-3">
                 <div class="form-group">
-                    <label class="form-label">Nombre del ticket *</label>
+                    <label class="form-label">Nombre de la reserva *</label>
                     <input type="text" class="form-control" id="clientTicketNombre"
                         placeholder="Ej: Pantalla no enciende">
                 </div>
